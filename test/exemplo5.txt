@@ -1,0 +1,14 @@
+(*TESTE - Válido. Uma expressão pode ser utilizada na procedure*)
+PROGRAM TESTEPROC2;
+LABEL label_a;
+CONST a = 100;
+VAR X, Y, Z : INTEGER;
+PROCEDURE P(y : INTEGER);
+    CONST A = 2;
+    VAR X, T : INTEGER;
+BEGIN
+END;
+BEGIN
+    X := 10;
+    CALL P((10 + 5) * X);  (* adicionado ponto e vírgula *)
+END.

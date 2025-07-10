@@ -1,7 +1,11 @@
 PROGRAM TESTE123;
-VAR x, A, B : INTEGER;
+VAR x, A, B : INTEGER; (* adicionado ponto e vírgula *)
 
+(*
+    - Início do bloco principal
+*)
 BEGIN
+     (*Testa as possibilidades do REPEAT*)
      REPEAT
      BEGIN
 	READLN(A,B);
