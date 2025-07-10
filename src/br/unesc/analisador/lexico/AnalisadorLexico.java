@@ -63,11 +63,10 @@ public class AnalisadorLexico {
         // / Expressão regular para separar identificadores, números, símbolos e
         // palavras-chave
         Pattern pattern = Pattern.compile(
-                "[a-zA-Z_][a-zA-Z_0-9]*" + // identificadores e palavras-chave
-                        "|:=|<=|>=|<>|[-+*/=<>]" + // operadores compostos e simples
-                        "|[();:.,]" + // pontuação
-                        "|\\d+" // números
-        );
+                "[a-zA-Z_][a-zA-Z_0-9]*" +
+                        "|:=|<=|>=|<>|[-+*/=<>]" +
+                        "|[();:.,\\[\\]]" +
+                        "|-?\\d+");
 
         Matcher matcher = pattern.matcher(programa);
         while (matcher.find()) {
