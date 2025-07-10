@@ -29,6 +29,10 @@ public class MainCompilador {
         try {
 
             String programa = Files.readString(exemplo);
+            // Remove comentários estilo Pascal: (* ... *), incluindo múltiplas linhas
+            programa = programa.replaceAll("(?s)\\(\\*.*?\\*\\)", "");
+            programa = programa.replaceAll("\\(\\*.*?\\*\\)", " ");
+
             Stack<Token> tokens = new AnalisadorLexico().gerarTokens(programa);
 
             while (tokens.isEmpty()) {
